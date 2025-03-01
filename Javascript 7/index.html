@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS class 7 ES6</title>
+</head>
+
+<body>
+    <h1>JS class 7 ES6</h1>
+    <!-- ex 1 --> old
+    <button onclick="alert('Button Clicked!')">Click Me</button>
+
+    <!-- ex 2 --> ES6
+    <button id="btn">Click</button>
+
+
+    <!-- btn created -->
+    <button id="showNames">Show Names</button>
+    <!-- ul created with id -->
+    <ul id="nameList"></ul>
+
+    <script>
+        // Function to display names
+        function displayNames(...names) {  // Using rest parameter (...names) to accept multiple name arguments
+            let list = document.getElementById("nameList");  // Get the <ul> element with the ID "nameList"
+            list.innerHTML = "";  // Clear any existing list items inside the <ul>
+
+            // Loop through each name in the 'names' array
+            names.forEach(name => {
+                let li = document.createElement("li");  // Create a new <li> element
+                li.textContent = name;  // Set the text content of <li> to the name
+                list.appendChild(li);  // Append the <li> element to the <ul>
+            });
+        }
+
+        // Add an event listener to the button with ID "showNames"
+        document.getElementById("showNames").addEventListener("click", function () {
+            // Call displayNames function with four names as arguments
+            displayNames("Alice", "Bob", "Charlie", "David");
+        });
+    </script>
+
+
+
+
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
